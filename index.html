@@ -1,11 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en" data-theme="cupcake">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Geometry Genius</title>
-</head>
-<body>
-    
-</body>
+    <!-- Daisyui Link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css"
+      rel="stylesheet"
+      type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body >
+    <!-- Header Section  -->
+    <header class="container mx-auto">
+        <div class="flex justify-between items-center bg-[#1090D81A] px-14 py-2 mt-4">
+            <div class="">
+                <h2 class="text-3xl font-bold">Interactive</h2>
+                <h3 class="text-2xl text-gray-600">Geometry Genius</h3>
+            </div>
+            <div class="">
+                <button class="bg-blue-500 px-5 py-2 font-semibold text-white text-2xl rounded-md">Blog</button>
+            </div>
+        </div>
+    </header>
+    <!-- Main Section  -->
+    <main class="container mx-auto my-10">
+        <div class="flex gap-5 ">
+            <!-- Card Section  -->
+        <div class="grid grid-cols-3 w-3/4 gap-5">
+            <!-- Card 1 -->
+            <div class="card bg-base-100 shadow-xl">
+                <figure class="px-10 pt-10">
+                  <img src="./images/triangle.png" alt="Shoes" class="rounded-xl" />
+                </figure>
+                <div class=" items-center text-center my-3">
+                  <h2 class="font-bold text-2xl">Triangle</h2>
+                  <p class="">Area (A) = 0.5 X b X h</p>
+                  <p>Area : <span id="triangle-area-value">0</span> </p>
+                  <div class="input-fill my-3">
+                    <input id="triangle-b-field" type="number" class="w-20 py-2 px-2 rounded-lg bg-slate-200" placeholder="b">
+                    <span class="font-semibold text-lg">cm</span>
+                    <input id="triangle-w-field" type="number" class="w-20 py-2 px-2 rounded-lg bg-slate-200" placeholder="h">
+                    <span class="font-semibold text-lg">cm</span>
+                  </div>
+                    <button onclick="triangleBtn()" class="btn btn-primary w-3/4 text-white text-[18px] ">Calculate</button>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="card bg-base-100 shadow-xl">
+                <figure class="px-10 pt-10">
+                  <img src="./images/rectangle.png" alt="Shoes" class="rounded-xl" />
+                </figure>
+                <div class=" items-center text-center my-3">
+                  <h2 class="font-bold text-2xl">Rectangle</h2>
+                  <p class="">Area (A) = w X I</p>
+                  <p>Area : </p>
+                  <div class="input-fill my-3">
+                    <input type="number" class="w-20 py-2 px-2 rounded-lg bg-slate-200" placeholder="W">
+                    <span class="font-semibold text-lg">cm</span>
+                    <input type="number" class="w-20 py-2 px-2 rounded-lg bg-slate-200" placeholder="I">
+                    <span class="font-semibold text-lg">cm</span>
+                  </div>
+                    <button class="btn btn-primary w-3/4 text-white text-[18px] ">Calculate</button>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="card bg-base-100 shadow-xl">
+                <figure class="px-10 pt-10">
+                  <img src="./images/parallelogram.png" alt="Shoes" class="rounded-xl" />
+                </figure>
+                <div class=" items-center text-center my-3">
+                  <h2 class="font-bold text-2xl">Parallelogram</h2>
+                  <p class="">Area (A) = b X h</p>
+                  <p>Area : </p>
+                  <div class="input-fill my-3">
+                    <input type="number" class="w-20 py-2 px-2 rounded-lg bg-slate-200" placeholder="b">
+                    <span class="font-semibold text-lg">cm</span>
+                    <input type="number" class="w-20 py-2 px-2 rounded-lg bg-slate-200" placeholder="h">
+                    <span class="font-semibold text-lg">cm</span>
+                  </div>
+                    <button class="btn btn-primary w-3/4 text-white text-[18px] ">Calculate</button>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="card bg-base-100 shadow-xl">
+                <figure class="px-10 pt-10">
+                  <img src="./images/rhombus.png" alt="Shoes" class="rounded-xl" />
+                </figure>
+                <div class=" items-center text-center my-3">
+                  <h2 class="font-bold text-2xl">Rhombus</h2>
+                  <p class="">Area (A) = 0.5 X d<sub>1</sub> X d <sub>2</sub></p>
+                  <p>d<sub>1</sub> = 16cm d<sub>2</sub> = 8cm </p>
+                  <div class="input-fill my-3">
+                    <input type="number" class="w-20 py-2 px-2 rounded-lg bg-slate-200" placeholder="b">
+                    <span class="font-semibold text-lg">cm</span>
+                    <input type="number" class="w-20 py-2 px-2 rounded-lg bg-slate-200" placeholder="h">
+                    <span class="font-semibold text-lg">cm</span>
+                  </div>
+                    <button class="btn btn-primary w-3/4 text-white text-[18px] ">Calculate</button>
+                </div>
+            </div>
+            <!-- Card 5 -->
+            <div class="card bg-base-100 shadow-xl">
+                <figure class="px-10 pt-10">
+                  <img src="./images/pentagon.png" alt="Shoes" class="rounded-xl" />
+                </figure>
+                <div class=" items-center text-center my-3">
+                  <h2 class="font-bold text-2xl">Pentagon</h2>
+                  <p class="">Area (A) = 0.5 X p X b</p>
+                  <p>p = 6cm, b = 10cm</p>
+                  <div class="input-fill my-3">
+                    <input type="number" class="w-20 py-2 px-2 rounded-lg bg-slate-200" placeholder="b">
+                    <span class="font-semibold text-lg">cm</span>
+                    <input type="number" class="w-20 py-2 px-2 rounded-lg bg-slate-200" placeholder="h">
+                    <span class="font-semibold text-lg">cm</span>
+                  </div>
+                    <button class="btn btn-primary w-3/4 text-white text-[18px] ">Calculate</button>
+                </div>
+            </div>
+            <!-- Card 6 -->
+            <div class="card bg-base-100 shadow-xl">
+                <figure class="px-10 pt-10">
+                  <img src="./images/parallelogram.png" alt="Shoes" class="rounded-xl" />
+                </figure>
+                <div class=" items-center text-center my-3">
+                  <h2 class="font-bold text-2xl">Ellipse</h2>
+                  <p class="">Area (A) = π ab</p>
+                  <p>a = 10cm, b = 4cm</p>
+                  <div class="input-fill my-3">
+                    <input type="number" class="w-20 py-2 px-2 rounded-lg bg-slate-200" placeholder="b">
+                    <span class="font-semibold text-lg">cm</span>
+                    <input type="number" class="w-20 py-2 px-2 rounded-lg bg-slate-200" placeholder="h">
+                    <span class="font-semibold text-lg">cm</span>
+                  </div>
+                    <button class="btn btn-primary w-3/4 text-white text-[18px] ">Calculate</button>
+                </div>
+            </div>
+        </div>
+        <div class="w-1/4 mt-10 bg-base-100 shadow-xl rounded-2xl">
+            <h2 class="text-center text-3xl font-semibold">Area Calculation</h2>
+        </div>
+        </div>
+        
+    </main>
+
+  </body>
+  <script src="./js/index.js"></script>
 </html>
