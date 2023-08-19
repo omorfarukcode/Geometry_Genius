@@ -29,7 +29,7 @@
         <div class="flex gap-5 ">
             <!-- Card Section  -->
         <div class="grid grid-cols-3 w-3/4 gap-5">
-            <!-- Card 1 -->
+            <!-- Card 1 Triangle -->
             <div class="card bg-base-100 shadow-xl">
                 <figure class="px-10 pt-10">
                   <img src="./images/triangle.png" alt="Shoes" class="rounded-xl" />
@@ -47,7 +47,7 @@
                     <button onclick="triangleBtn()" class="btn btn-primary w-3/4 text-white text-[18px] ">Calculate</button>
                 </div>
             </div>
-            <!-- Card 2 -->
+            <!-- Card 2 Rectangle -->
             <div class="card bg-base-100 shadow-xl">
                 <figure class="px-10 pt-10">
                   <img src="./images/rectangle.png" alt="Shoes" class="rounded-xl" />
@@ -55,17 +55,17 @@
                 <div class=" items-center text-center my-3">
                   <h2 class="font-bold text-2xl">Rectangle</h2>
                   <p class="">Area (A) = w X I</p>
-                  <p>Area : </p>
+                  <p>Area : <span id="rectangle-value">0</span> </p>
                   <div class="input-fill my-3">
-                    <input type="number" class="w-20 py-2 px-2 rounded-lg bg-slate-200" placeholder="W">
+                    <input id="rectangle-w" type="number" class="w-20 py-2 px-2 rounded-lg bg-slate-200" placeholder="W">
                     <span class="font-semibold text-lg">cm</span>
-                    <input type="number" class="w-20 py-2 px-2 rounded-lg bg-slate-200" placeholder="I">
+                    <input id="rectangle-h" type="number" class="w-20 py-2 px-2 rounded-lg bg-slate-200" placeholder="I">
                     <span class="font-semibold text-lg">cm</span>
                   </div>
-                    <button class="btn btn-primary w-3/4 text-white text-[18px] ">Calculate</button>
+                    <button onclick="rectangleBtn()" class="btn btn-primary w-3/4 text-white text-[18px] ">Calculate</button>
                 </div>
             </div>
-            <!-- Card 3 -->
+            <!-- Card 3 Parallelogram -->
             <div class="card bg-base-100 shadow-xl">
                 <figure class="px-10 pt-10">
                   <img src="./images/parallelogram.png" alt="Shoes" class="rounded-xl" />
@@ -73,14 +73,14 @@
                 <div class=" items-center text-center my-3">
                   <h2 class="font-bold text-2xl">Parallelogram</h2>
                   <p class="">Area (A) = b X h</p>
-                  <p>Area : </p>
+                  <p>Area : <span id="parallelogram-value">0</span> </p>
                   <div class="input-fill my-3">
-                    <input type="number" class="w-20 py-2 px-2 rounded-lg bg-slate-200" placeholder="b">
+                    <input id="parallelogram-base" type="number" class="w-20 py-2 px-2 rounded-lg bg-slate-200" placeholder="b">
                     <span class="font-semibold text-lg">cm</span>
-                    <input type="number" class="w-20 py-2 px-2 rounded-lg bg-slate-200" placeholder="h">
+                    <input id="parallelogram-hight" type="number" class="w-20 py-2 px-2 rounded-lg bg-slate-200" placeholder="h">
                     <span class="font-semibold text-lg">cm</span>
                   </div>
-                    <button class="btn btn-primary w-3/4 text-white text-[18px] ">Calculate</button>
+                    <button onclick="parallelogram()" class="btn btn-primary w-3/4 text-white text-[18px] ">Calculate</button>
                 </div>
             </div>
             <!-- Card 4 -->
@@ -140,6 +140,7 @@
         </div>
         <div class="w-1/4 mt-10 bg-base-100 shadow-xl rounded-2xl">
             <h2 class="text-center text-3xl font-semibold">Area Calculation</h2>
+            <div id="calculation-entry" class="m-4 text-2xl"></div>
         </div>
         </div>
         
